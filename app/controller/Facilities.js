@@ -10,7 +10,9 @@ Ext.define("minus80.controller.Facilities",{
 		},
 		control:{
 			facilitiesList: {
-				leafitemtap: 'onUnitTap'
+//				leafitemtap: 'onUnitTap'
+//				disclose: 'onDisclose',
+				itemtap: 'onItemTap'
 			}
 		}
 	},
@@ -19,6 +21,16 @@ Ext.define("minus80.controller.Facilities",{
 		this.callParent();
 	},
 
+	onItemTap: function(list, index, target, record, evt, options){
+		//push the unit detail panel onto the FacilitiesPanel NavView
+		this.getFacilitiesPanel().push({
+			xtype: 'unitdetail',
+			title: record.data.text,
+			data: record.data
+		});
+	},
+
+/*
 	onUnitTap: function(thisNestedList, list, index, target, record){
 		console.log('Inside onUnitTap()');
 		console.log(record.data);
@@ -31,5 +43,6 @@ Ext.define("minus80.controller.Facilities",{
 		}
 		this.getFacilitiesList().getDetailCard().setHtml(unitData);
 	}
+*/
 });
 

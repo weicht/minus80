@@ -22,26 +22,33 @@ Ext.define("minus80.view.Facilities",{
 			// at the top along with a Back button
 //			{ docked: 'top', xtype: "toolbar", title: "Alarms" },{
 			{
-	   			xtype: 'nestedlist',
+//	   			xtype: 'nestedlist',
+	   			xtype: 'list',
 				title: 'Facilities',
 		    	store: 'facilitiesStore',
 				id: 'facilities-list',
 			
 				//indexBar: true,
 
+/*
 			    detailCard: {
                     xtype: 'panel',
                     scrollable: true,
                     styleHtmlContent: true,
              		tpl: 'Text: {text}<BR>Info: {info}'
                 },
+*/
                 				
-				//gives arrow for more info on the right side, but controller will handle the event
-				onItemDisclosure: true,
+//				//gives arrow for more info on the right side, but controller will handle the event
+//				onItemDisclosure: true,
 				
 				//formatting template for the list item
 //		    	itemTpl: '{text}<div class="metadata">{info}</div>',
-		    	
+
+		    	itemTpl: '{text}<div class="metadata">{[values.items.length]} units</div>',
+//itemTpl: 'Nothing',
+
+/*
    	        	getItemTextTpl: function(){
 					var tplConstructor = '{text}' +
 					'<tpl if="type === \'facility\'">'+
@@ -52,7 +59,7 @@ Ext.define("minus80.view.Facilities",{
 					'</tpl>';
 					return tplConstructor;
 				}
-
+*/
 			}
 		]
 	}
