@@ -45,7 +45,8 @@ for ($i = 0; $i < count($facilities); $i++)
 			"items" => array());
 
 		$devices = null;
-		load_mult_row_info("device_alarm da, device d", 
+
+ 		load_mult_row_info("device_alarm da, device d", 
 			"WHERE da.show_device = 1 and da.device_id = d.device_id and d.unit_id=".$units[$j]['unit_id']." order by da.device_id, da.device_number, da.description", 
 			$devices, $db, "da.description, d.device_id, d.market_id, d.product_id, da.device_number, da.current_value, da.default_state, 
 						da.measurement_type, da.device_type, da.alarm_state, (UNIX_TIMESTAMP() - UNIX_TIMESTAMP(da.last_message)) as last_message, 
@@ -55,6 +56,7 @@ for ($i = 0; $i < count($facilities); $i++)
 		for( $k = 0; $k < count($devices); $k++ )
 		{
 			$device = array("id" => $devices[$k]['device_id'], "type" => "device",
+				"number" => $devices[$k]['device_number'],
 				"text" => $devices[$k]['description'],
 				"value" => $devices[$k]['current_value']);
 			

@@ -46,6 +46,7 @@ for( $j = 0; $j < count($units); $j++ )
 	for( $k = 0; $k < count($devices); $k++ )
 	{
 		$device = array("id" => $devices[$k]['device_id'], "type" => "device",
+			"number" => $devices[$k]['device_number'],
 			"text" => $devices[$k]['description'],
 			"value" => $devices[$k]['current_value']);
 		
