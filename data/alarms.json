@@ -1,22 +1,44 @@
 {
-	"text": "Alarm Listing Data",
-	"total": "3",
-    "items": [
-    	{
-	    "id": "1",
-    	"text": "Fridge Unit",
-    	"type": "unit",
-    	"info": "This alarm is going off, do something: ACK//IGNORE"
-    	},{
-	    "id": "2",
-    	"text": "Chem Lab Refrigerator",
-    	"type": "unit",
-    	"info": "Refrig door is ajar: ACK//IGNORE"
-    	},{
-	    "id": "3",
-    	"text": "Deep Freezer",
-    	"type": "unit",
-    	"info": "Freezer for chemicals: ACK//IGNORE"
-    	}
-    ]
+    "success": true,
+    "text": "Alarms Listing",
+    "total": 1,
+    "items": [{
+        "unit_id": "2",
+        "type": "unit",
+        "id": "2",
+        "text": "Backup Refrigerator",
+        "info": "",
+        "alarm_state": "1",
+        "alarm_confirmed": "1",
+        "confirmed_by": "testing",
+        "items": [{
+            "device_id": "3",
+            "type": "device",
+            "id": "2-3-1",
+            "device_number": "1",
+            "text": "Lower Level Ambient",
+            "value": "23"
+        }, {
+            "device_id": "3",
+            "type": "device",
+            "id": "2-3-2",
+            "device_number": "2",
+            "text": "Backup Refrigerator",
+            "value": "-12"
+        }, {
+            "device_id": "13",
+            "type": "device",
+            "id": "2-13-1",
+            "device_number": "1",
+            "text": "Door Status",
+            "value": "0"
+        }, {
+            "device_id": "13",
+            "type": "device",
+            "id": "2-13-2",
+            "device_number": "2",
+            "text": "Tilt Status",
+            "value": "0"
+        }]
+    }]
 }

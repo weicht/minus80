@@ -4,11 +4,14 @@ Ext.define('minus80.model.Facilities', {
 	config: {
 		idProperty: 'id',
 	    fields: [
-//	    	{name: 'uuid', type: 'string', convert: function(value, record){return record.get('type')+record.get('id')}},
-			{name: 'id', type: 'string'},
+//	    	{name: 'uuid', type: 'string'},
+	    	{name: 'id', type: 'string'},
+	    	{name: 'facility_id', type: 'string'}, //only exist for facilities
 			{name: 'text', type: 'string'},
 			{name: 'info', type: 'string'},
 			{name: 'type', type: 'string'},
+	    	{name: 'device_id', type: 'string'}, //only exist for devices
+	    	{name: 'device_number', type: 'string'}, //only exist for devices
 			{name: 'items', type: 'auto'}
 		]
 	}
