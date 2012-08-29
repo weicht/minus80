@@ -19,7 +19,6 @@ Ext.define("minus80.view.Alarms",{
 		items: [
 			//we are using an Ext.navigation.View so it automatically adds a toolbar
 			// at the top along with a Back button
-//			{ docked: 'top', xtype: "toolbar", title: "Alarms" },{
 			{
 	   			xtype: 'list',
 				title: 'Alarms',
@@ -31,7 +30,7 @@ Ext.define("minus80.view.Alarms",{
 				onItemDisclosure: true,
 				
 				//formatting template for the list item
-		    	itemTpl: '{text}<div class="metadata">{info}</div>',
+		    	itemTpl: '{text}<div class="metadata">{[values.items.length]} devices</div>',
 			}
 		]
 	}

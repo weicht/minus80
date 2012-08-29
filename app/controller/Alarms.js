@@ -21,8 +21,8 @@ Ext.define("minus80.controller.Alarms",{
 	},
 	
 	showUnitDetail: function(list, index, target, record) {
-//		console.log('Inside showDetail of Alarms Controller:: index = '+index);
-//		console.log(record.data);
+		console.log('Inside showUnitDetail of Alarms Controller:: index = '+index);
+		console.log(record.data);
 
 		//push the unit detail panel onto the AlarmsPanel NavView
 		this.getAlarmsPanel().push({

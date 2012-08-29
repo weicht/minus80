@@ -11,15 +11,24 @@ Ext.define("minus80.view.UnitDetail",{
 		//make the text look better on mobile sized devices
 		scrollable: true,
 		styleHtmlContent: true,
-//		tpl: '{text}<div class="metadata">{info}<div class="metadata">{items.length} units to show below...</div>',
-//		tpl: new Ext.XTemplate('{text}<div class="metadata">{info}<div class="metadata">{items.length} units to show below...</div>'),
 
 		tpl: new Ext.XTemplate(
-            '<tpl for="items">',
-                '<div class="metadata">',
-                    '<div class="name">{[xindex]} {text}</div>',
-                '</div>',
-            '</tpl>'),
+			'<tpl if="type === \'facility\'">',
+					'<div class="metadata">{[values.items.length]} units</div><HR>',
+					'<tpl for="items">',
+						'<div class="metadata">',
+							'<div class="name">Unit #{[xindex]} {text}</div>',
+						'</div>',
+					'</tpl>',
+			'</tpl>',
+			'<tpl if="type === \'unit\'">',
+					'<div class="metadata">{[values.items.length]} devices</div><HR>',
+					'<tpl for="items">',
+						'<div class="metadata">',
+							'<div class="name">Device #{[xindex]} {text}</div>',
+						'</div>',
+					'</tpl>',
+			'</tpl>'),
 
 /*
             '<tpl for="items">',
@@ -37,19 +46,6 @@ Ext.define("minus80.view.UnitDetail",{
                 '{% } %}',
             '</tpl>',
 */
-/*
-   	        	getItemTextTpl: function(){
-					var tplConstructor = '{text}' +
-					'<tpl if="type === \'facility\'">'+
-							'<div class="metadata">{[values.items.length]} units</div>' +
-					'</tpl>' +
-					'<tpl if="type === \'unit\'">'+
-							'<div class="metadata">{[values.items.length]} devices</div>' +
-					'</tpl>';
-					return tplConstructor;
-				},
-*/
-
 
 //may want to use this later when we have ACK/IGNORE buttons		
 		items: [
@@ -60,7 +56,7 @@ Ext.define("minus80.view.UnitDetail",{
 				items: [
 					{
 						xtype: 'button',
-						text: 'ACKNOWLEDGE',
+						text: 'CONFIRM',
 						handler: function(){
 							Ext.Msg.alert('NOT YET IMPLEMENTED: ACK');
 						}

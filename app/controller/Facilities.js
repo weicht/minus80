@@ -22,6 +22,9 @@ Ext.define("minus80.controller.Facilities",{
 	},
 
 	onItemTap: function(list, index, target, record, evt, options){
+		console.log('Inside onItemTap of Facilities Controller:: index = '+index);
+		console.log(record.data);
+
 		//push the unit detail panel onto the FacilitiesPanel NavView
 		this.getFacilitiesPanel().push({
 			xtype: 'unitdetail',
