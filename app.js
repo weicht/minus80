@@ -1,13 +1,15 @@
-Ext.application({
+var Minus80App = Ext.application({
     name: 'minus80',
-
+    //global settings variable to make it easy to access from within stores
+//	settings: {username: 'junk', password: 'junk'},
+	
     requires: [
         'Ext.MessageBox'
     ],
 
-    views:  ['Main', 'Alarms', 'Settings', 'Info', 'UnitDetail', 'Facilities'],
     models: ['Alarms', 'Settings', 'Facilities'],
-    stores: ['Alarms', 'Settings', 'Facilities'],
+    stores: ['Settings'],//removed Alarms, Facilities - quirkiness occurred with loading twice
+    views:  ['Main', 'Alarms', 'Settings', 'Facilities', 'Info', 'UnitDetail'],
     controllers: ['Alarms', 'Settings', 'Facilities'],
 
     icon: {
@@ -34,7 +36,6 @@ Ext.application({
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('minus80.view.Main'));
-console.log('Leaving app.js launch()');
     },
 
     onUpdated: function() {

@@ -12,7 +12,6 @@ Ext.define("minus80.view.Main", {
 			},
 			{
 				xtype: 'alarmspanel',
-				id: 'alarmsButton'
 			},
 			{
 				xtype: 'settingspanel'
@@ -22,8 +21,4 @@ Ext.define("minus80.view.Main", {
 			}
         ]
     },
-    
-//    initialize: function(){
-//console.log('Inside initialze of main.js - need to auto select first Facil if only 1');
-//    }
 });

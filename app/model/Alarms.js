@@ -2,6 +2,7 @@ Ext.define('minus80.model.Alarms', {
 	extend: 'Ext.data.Model',
 	
 	config: {
+		idProperty: 'id',
 	    fields: [
 	    	{name: 'id', type: 'string'},
 	    	{name: 'unit_id', type: 'string'}, //only exist for units

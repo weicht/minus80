@@ -1,6 +1,6 @@
 Ext.define("minus80.controller.Facilities",{
 	extend: 'Ext.app.Controller',
-	requires: ['minus80.store.Facilities'],
+	requires: ['minus80.store.Facilities', 'minus80.store.Settings'],
 
 	config: {
 		stores: ['Facilities'],
@@ -10,20 +10,18 @@ Ext.define("minus80.controller.Facilities",{
 		},
 		control:{
 			facilitiesList: {
-//				leafitemtap: 'onUnitTap'
-//				disclose: 'onDisclose',
 				itemtap: 'onItemTap'
 			}
 		}
 	},
-	
-	launch: function(){
+
+   	launch: function(){
 		this.callParent();
 	},
-
+        
 	onItemTap: function(list, index, target, record, evt, options){
-		console.log('Inside onItemTap of Facilities Controller:: index = '+index);
-		console.log(record.data);
+//		console.log('Inside onItemTap of Facilities Controller:: index = '+index);
+//		console.log(record.data);
 
 		//push the unit detail panel onto the FacilitiesPanel NavView
 		this.getFacilitiesPanel().push({
@@ -49,3 +47,49 @@ Ext.define("minus80.controller.Facilities",{
 */
 });
 
+
+
+/*
+	launch: function() {
+//            console.log(this);
+		var facilitiesStore = Ext.getStore('facilitiesStore');
+		console.log('1. facilitiesStore.getCount(): '+facilitiesStore.getCount());
+
+//		facilitiesStore.on({
+//			load: 'onFacilitiesLoad',
+//			scope: this
+//		});
+//		facilitiesStore.load();
+
+//facilitiesStore.load({
+//    success : function(store) {
+//        console.log(store.getCount());
+//    }
+//});
+
+
+		{
+			success: function(store){
+				console.log('store plz: '+store.getCount());
+			},
+			error: function(){
+console.log('error loading store');
+			},
+			failure: function(){
+console.log('failure loading store');
+			}
+		});
+
+//		console.log('2. facilitiesStore.getCount(): '+facilitiesStore.getCount());
+	},
+
+	onFacilitiesLoad: function(store) {
+console.log('store plz: '+store.getCount());
+console.log('-- Inside onFacilitiesLoad');
+		var facilitiesList = this.getFacilitiesList();
+		facilitiesList.refresh();
+console.log('facilitiesList.getStore().getCount(): '+facilitiesList.getStore().getCount());
+console.log(' count the hard way: '+Ext.getStore('facilitiesStore').getCount());
+//            facilitiesList.select(0);
+	},
+*/

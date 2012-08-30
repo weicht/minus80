@@ -3,7 +3,6 @@ Ext.define("minus80.view.UnitDetail",{
 	xtype: 'unitdetail',
 	
 	config:{
-//		title: 'Alarms - Unit Detail',
 		layout: 'fit',
 //need to add the style stuff to the application's .css or index.html file later
 		cls: 'info',

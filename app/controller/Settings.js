@@ -2,6 +2,7 @@ Ext.define("minus80.controller.Settings",{
 	extend: 'Ext.app.Controller',
 
 	config: {
+		stores: ['Settings'],
 		refs: {
 			//these are defined with id's in the Settings view
 			settingsSaveBtn: '#settings-save-btn',
@@ -41,11 +42,9 @@ Ext.define("minus80.controller.Settings",{
 				var response = Ext.decode(result.responseText);
 //console.log('response.success: '+response.success);
 				if( response.success == true ){
-					Ext.Msg.alert("Settings", "User credentials validated");
-					
 					//update the settings in storage
 					var store = Ext.getStore('settingsStore');
-			//		console.log('Current user creds - name: '+store.getAt(0).data.username+' :: pass: '+store.getAt(0).data.password);
+//console.log('Current user creds - name: '+store.getAt(0).data.username+' :: pass: '+store.getAt(0).data.password);
 			
 					//delete existing settings
 					if(store.data.length > 0){
@@ -68,6 +67,11 @@ Ext.define("minus80.controller.Settings",{
 					//finally, save our Settings data to localStorage
 					store.sync();
 
+					//UGLY: Set the global variable for easy access within other stores.
+					minus80.app.settings = settingsValues;
+//console.log('  global settings daved - username: '+minus80.app.settings.username+ '// password: '+minus80.app.settings.password);
+
+					Ext.Msg.alert("Settings", "User credentials validated");
 				} else {
 					Ext.Msg.alert("Settings", "User credentials failed to validate");
 				}

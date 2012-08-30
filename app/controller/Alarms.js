@@ -1,11 +1,10 @@
 Ext.define("minus80.controller.Alarms",{
 	extend: 'Ext.app.Controller',
-	requires: ['minus80.store.Alarms'],
+	requires: ['minus80.store.Settings'],
 
 	config: {
 		stores: ['Alarms'],
 		refs: {
-			alarmsBadge: '#alarmsBadge', //id from the view requires a # prefix
 			alarmsList: '#alarms-list', //id from the view requires a # prefix
 			alarmsPanel: 'alarmspanel' //xtype requires no # prefix
 		},

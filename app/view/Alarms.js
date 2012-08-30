@@ -2,7 +2,6 @@ Ext.define("minus80.view.Alarms",{
 	extend: 'Ext.navigation.View',
 	xtype: 'alarmspanel',
 	requires: ['Ext.dataview.List', 'minus80.store.Alarms'],
-	id: 'alarmsBadge',
 	
 	config: {
 		title: 'Alarms',
@@ -12,9 +11,6 @@ Ext.define("minus80.view.Alarms",{
 		
 		//make the text look better on mobile sized devices
 		scrollable: true,
-				
-//badgeText: Ext.getStore('alarmsStore').getCount(),
-//badgeText: '7',
                 	    
 		items: [
 			//we are using an Ext.navigation.View so it automatically adds a toolbar
@@ -24,11 +20,7 @@ Ext.define("minus80.view.Alarms",{
 				title: 'Alarms',
 		    	store: 'alarmsStore',
 				id: 'alarms-list',
-				//indexBar: true,
-				
-				//gives arrow for more info on the right side, but controller will handle the event
-				onItemDisclosure: true,
-				
+
 				//formatting template for the list item
 		    	itemTpl: '{text}<div class="metadata">{[values.items.length]} devices</div>',
 			}
