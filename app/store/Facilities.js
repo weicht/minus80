@@ -6,7 +6,8 @@ Ext.define('minus80.store.Facilities', {
 	config: {
 		storeId: 'facilitiesStore',
 		model: 'minus80.model.Facilities',
-		autoLoad: true,
+//Don't autoLoad - load from the Facilities controller instead
+//		autoLoad: true,
 	    proxy: {
 			type: 'ajax',
 //			url: 'data/facilities.json',

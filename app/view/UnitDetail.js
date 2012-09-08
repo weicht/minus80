@@ -1,6 +1,7 @@
 Ext.define("minus80.view.UnitDetail",{
 	extend: 'Ext.Panel',
 	xtype: 'unitdetail',
+//	id: 'unitdetail',
 	
 	config:{
 		layout: 'fit',

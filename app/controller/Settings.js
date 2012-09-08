@@ -2,7 +2,9 @@ Ext.define("minus80.controller.Settings",{
 	extend: 'Ext.app.Controller',
 
 	config: {
-		stores: ['Settings'],
+		//if i turn this one, Settings gets loaded twice b/c it's declared in the app.js file too
+		// but if I turn it off in app.js, nothing loads
+//		stores: ['Settings'],
 		refs: {
 			//these are defined with id's in the Settings view
 			settingsSaveBtn: '#settings-save-btn',
