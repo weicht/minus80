@@ -14,18 +14,19 @@ Ext.define('minus80.store.Settings', {
 		listeners: {
 			load: function(store, records, successful) {
 			console.log('Settings loaded');
-//console.log(' un: '+store.getAt(0).data.username);
 				//if the store is empty, then add a dummy account
 				if(store.data.length < 1){
 					//create the local storage
 					store.add({username: 'username', password: 'password'});
 					store.sync();
 				}
-//console.log('  -- un: '+this.getAt(0).data.username);
 
-				//UGLY:  Set the global variable for easy access.
-//				minus80.app.settings = this.getAt(0).data;
-//console.log('  just set the global username: '+minus80.app.settings.username+ '// password: '+minus80.app.settings.password);
+				//if it's still saying "username/password" then provide a popup window
+				// telling them to modify their Settings
+				if( this.getAt(0).data.username == 'username' &&
+					this.getAt(0).data.password == 'password' ){
+					Ext.Msg.alert("Settings", "Update your Settings so we may load your data.");
+				}
 			}
 		}
 	}
