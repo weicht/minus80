@@ -1,52 +1,29 @@
 Ext.define("minus80.view.UnitDetail",{
 	extend: 'Ext.Panel',
 	xtype: 'unitdetail',
-//	id: 'unitdetail',
 	
 	config:{
-		layout: 'fit',
 //need to add the style stuff to the application's .css or index.html file later
 		cls: 'info',
-		
-		//make the text look better on mobile sized devices
+		layout: 'fit',
+		style: 'text-align: left;',
 		scrollable: true,
 		styleHtmlContent: true,
-
 		tpl: new Ext.XTemplate(
-			'<tpl if="type === \'facility\'">',
-					'<div class="metadata">{[values.items.length]} units</div><HR>',
-					'<tpl for="items">',
-						'<div class="metadata">',
-							'<div class="name">Unit #{[xindex]} {text}</div>',
-						'</div>',
-					'</tpl>',
-			'</tpl>',
-			'<tpl if="type === \'unit\'">',
-					'<div class="metadata">{[values.items.length]} devices</div><HR>',
-					'<tpl for="items">',
-						'<div class="metadata">',
-							'<div class="name">Device #{[xindex]} {text}</div>',
-						'</div>',
-					'</tpl>',
+			'<tpl for="items">',
+				'{text}',
+					'<div class="metadata">Confirmed By: {confirmed_by}</div>',
+						'<tpl for="items">',
+								'<div class="metadata">{text}: {value}</div>',
+						'</tpl>',
+				'<HR>',
 			'</tpl>'),
+	}
+});
+
+
 
 /*
-            '<tpl for="items">',
-                '{% if(xindex % this.getPerRow() == 1) {%}',
-                    '<div class="person_rows">',
-                '{% } %}',
-
-                '<div class="person">',
-                    '<div class="name">{[xindex]}{name}</div>',
-                    '<div class="age">{age}{[xindex % this.getPerRow() == 1]}</div>',
-                '</div>',
-
-                '{% if(xindex % this.getPerRow() == 0 || xindex == xcount){ %}',
-                    '</div>',
-                '{% } %}',
-            '</tpl>',
-*/
-
 //may want to use this later when we have ACK/IGNORE buttons		
 		items: [
 			{
@@ -64,5 +41,4 @@ Ext.define("minus80.view.UnitDetail",{
 				]
 			}
 		]
-	}
-});
+*/

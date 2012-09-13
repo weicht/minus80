@@ -66,14 +66,24 @@ Ext.define("minus80.controller.Settings",{
 					//add the username/password
 					store.add({username: settingsValues.username, password: settingsValues.password});
 					
-					//finally, save our Settings data to localStorage
+//TODO:  Get the reaload of the app to work after saving the credentials.
+// right now, the sync() doesn't finish before the fireEvent occurs so the settings don't get saved
+// and adding callbacks to the sync() call doesn't appear to be working
+
+					//save our Settings data to localStorage
 					store.sync();
 
-					//UGLY: Set the global variable for easy access within other stores.
-					minus80.app.settings = settingsValues;
-//console.log('  global settings daved - username: '+minus80.app.settings.username+ '// password: '+minus80.app.settings.password);
+//					Ext.Msg.alert("Settings", "User credentials validated", function(e){
+//						//fire the Main app logic to store the global settings and refresh the app
+//						minus80.app.fireEvent('loginSuccess', settingsValues);
+//					});
+					Ext.Msg.confirm("Settings", "Credentials validated. Reload data?", function(e){
+						if(e == 'yes'){
+							//fire the Main app logic to store the global settings and refresh the app
+							minus80.app.fireEvent('loginSuccess', settingsValues);
+						}
+					});
 
-					Ext.Msg.alert("Settings", "User credentials validated");
 				} else {
 					Ext.Msg.alert("Settings", "User credentials failed to validate");
 				}

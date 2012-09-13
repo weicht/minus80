@@ -28,7 +28,7 @@ Ext.define("minus80.controller.Facilities",{
 		this.getFacilitiesPanel().push({
 			xtype: 'unitdetail',
 			title: record.data.text,
-			data: record.data
+			data: record.data,
 		});
 	},
 });

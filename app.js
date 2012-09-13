@@ -10,7 +10,7 @@ var Minus80App = Ext.application({
     models: ['Alarms', 'Settings', 'Facilities'],
     stores: ['Settings'],//removed Alarms, Facilities - quirkiness occurred with loading twice
     views:  ['Main', 'Alarms', 'Settings', 'Facilities', 'Info', 'UnitDetail'],
-    controllers: ['Alarms', 'Settings', 'Facilities'],
+    controllers: ['Alarms', 'Settings', 'Facilities', 'Main'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -36,6 +36,8 @@ var Minus80App = Ext.application({
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('minus80.view.Main'));
+        
+console.log('leaving main launch event');
     },
 
     onUpdated: function() {
