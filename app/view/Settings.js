@@ -28,12 +28,14 @@ Ext.define("minus80.view.Settings", {
 			    	id: 'username',
 			        xtype: 'textfield',
 			        name : 'username',
-			        label: 'Username'
+			        label: 'Username',
+			        labelWidth: 100
 			    },{
 			    	id: 'password',
 			        xtype: 'passwordfield',
 			        name : 'password',
-			        label: 'Password'
+			        label: 'Password',
+			        labelWidth: 100
 			    }],
 			},
 			{

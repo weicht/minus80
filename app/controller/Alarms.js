@@ -26,11 +26,13 @@ Ext.define("minus80.controller.Alarms",{
 
 			if(this.getTotalCount()>0){
 				var testing = {
+//					extend: 'Ext.Panel',
 					xtype  : 'panel',
 					data: this.data,
+					padding: 5,
 					tpl: new Ext.XTemplate(
 						'<tpl for="items">',
-							'{data.text}',
+							'<div class="title">{data.text}</div>',
 								'<div class="metadata">Confirmed By: {data.confirmed_by}</div>',
 									'<tpl for="data.items">',
 											'<div class="metadata">{text}: {value}</div>',
@@ -41,11 +43,12 @@ Ext.define("minus80.controller.Alarms",{
 						layout: 'fit',								
 						scrollable: true,
 						styleHtmlContent: true,
-						style: 'text-align: left;'
+//						style: 'text-align: left;',
 					}
 				};
 			
 				panel.add(testing);
+//				panel.push(testing);
 			}//end getTotalCount()>0
 		});
 	}//end launch: function()

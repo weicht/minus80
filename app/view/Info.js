@@ -19,20 +19,16 @@ Ext.define("minus80.view.Info",{
 				xtype: "toolbar",
 			    title: "Info"
 			},{
-				 html: ['<BR>Minus80<BR>&copy; 2012 Minus80 Inc, All Rights Reserved \
+				 html: ['<BR><div class="infotitle">Minus 80 Monitoring</div> \
+				 		<div class="copy">Copyright &copy; 2012. All Rights Reserved.</div> \
 				    	<BR>web: <a href="http://www.minus80monitoring.com">www.minus80monitoring.com</a> \
 						<BR>Sales: <a href="mailto:sales@minus80monitoring.com">sales@minus80monitoring.com</a> \
 						<BR>Support: <a href="mailto:support@minus80monitoring.com">support@minus80monitoring.com</a> \
 						<BR>General: <a href="mailto:info@minus80monitoring.com">info@minus80monitoring.com</a> \
-				    	<BR><BR><div class="metadata">Build Date: 13 Sep 2012 11:10am EST</div>'
+				    	<BR><BR><div class="buildinfo">Build Date: 20 Sep 2012 9:55am EST</div>'
 						].join("")			
 			}
 		]
 	}
 });
 
-
-
-/*
-				    	<BR>Phone: <a href="tel:+18885551212">(800) 555-1212</a> \
-*/

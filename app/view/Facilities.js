@@ -24,7 +24,7 @@ Ext.define("minus80.view.Facilities",{
 				//indexBar: true,
 
 				//formatting template for the list item
-		    	itemTpl: '{text}<div class="metadata">{[values.items.length]} units</div>',
+		    	itemTpl: '<div class="title">{text}</div><div class="metadata">{[values.items.length]} Units</div>',
 			}
 		]
 	}

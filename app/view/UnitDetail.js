@@ -11,7 +11,7 @@ Ext.define("minus80.view.UnitDetail",{
 		styleHtmlContent: true,
 		tpl: new Ext.XTemplate(
 			'<tpl for="items">',
-				'{text}',
+				'<div class="title">{text}</div>',
 					'<div class="metadata">Confirmed By: {confirmed_by}</div>',
 						'<tpl for="items">',
 								'<div class="metadata">{text}: {value}</div>',
