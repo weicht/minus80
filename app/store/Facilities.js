@@ -6,11 +6,8 @@ Ext.define('minus80.store.Facilities', {
 	config: {
 		storeId: 'facilitiesStore',
 		model: 'minus80.model.Facilities',
-//Don't autoLoad - load from the Facilities controller instead
-//		autoLoad: true,
 	    proxy: {
 			type: 'ajax',
-//			url: 'data/facilities.json',
 			url: '/user/get_facilities.php',
 			extraParams: {username: 'junk', password: 'junk'}, //not used at this point, but needs to be declared here
 			reader: {
@@ -22,7 +19,6 @@ Ext.define('minus80.store.Facilities', {
 
 		listeners: {
 			beforeload: function(){
-//				this.getProxy().setExtraParams(minus80.app.settings);
 				this.getProxy().setExtraParams( Ext.getStore('settingsStore').getAt(0).data );
 			},
 			load: function(store, records, successful) {

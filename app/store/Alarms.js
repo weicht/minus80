@@ -6,11 +6,8 @@ Ext.define('minus80.store.Alarms', {
 	config: {
 		storeId: 'alarmsStore',
 		model: 'minus80.model.Alarms',
-//Don't autoLoad - load from the Alarms controller instead
-//		autoLoad: true,
 	    proxy: {
 			type: 'ajax',
-//			url: 'data/alarms.json',
 			url: '/user/get_alarms.php',
 			extraParams: {username: 'junk', password: 'junk'},//not used but needs to be declared
 			reader: {
@@ -22,7 +19,6 @@ Ext.define('minus80.store.Alarms', {
 
 		listeners: {
 			beforeload: function(){
-//				this.getProxy().setExtraParams(minus80.app.settings);
 				this.getProxy().setExtraParams( Ext.getStore('settingsStore').getAt(0).data );
 			},
 			load: function(store, records, successful) {

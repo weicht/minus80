@@ -4,7 +4,7 @@ Ext.define("minus80.view.UnitDetail",{
 	
 	config:{
 //need to add the style stuff to the application's .css or index.html file later
-		cls: 'info',
+//		cls: 'info',
 		layout: 'fit',
 		style: 'text-align: left;',
 		scrollable: true,
@@ -21,24 +21,3 @@ Ext.define("minus80.view.UnitDetail",{
 	}
 });
 
-
-
-/*
-//may want to use this later when we have ACK/IGNORE buttons		
-		items: [
-			{
-				docked: 'bottom',
-				xtype: "toolbar",
-				layout: {pack: 'center'},
-				items: [
-					{
-						xtype: 'button',
-						text: 'CONFIRM',
-						handler: function(){
-							Ext.Msg.alert('NOT YET IMPLEMENTED: ACK');
-						}
-					}
-				]
-			}
-		]
-*/

@@ -10,6 +10,10 @@ Ext.define("minus80.view.Settings", {
 		title: 'Settings',
 		iconCls: 'settings',
 
+		//make the text look better on mobile sized devices
+		scrollable: true,
+		styleHtmlContent: true,
+
 		items: [
 			{
 				docked: 'top',
