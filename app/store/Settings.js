@@ -13,7 +13,6 @@ Ext.define('minus80.store.Settings', {
 
 		listeners: {
 			load: function(store, records, successful) {
-			console.log('Settings loaded');
 				//if the store is empty, then add a dummy account
 				if(store.data.length < 1){
 					//create the local storage

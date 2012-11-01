@@ -6,8 +6,9 @@ Ext.define('minus80.model.Alarms', {
 	    fields: [
 	    	{name: 'id', type: 'string'},
 	    	{name: 'unit_id', type: 'string'}, //only exist for units
-	    	{name: 'device_id', type: 'string'}, //only exist for devices
-	    	{name: 'device_number', type: 'string'}, //only exist for devices
+//	    	{name: 'device_id', type: 'string'}, //only exist for devices
+//	    	{name: 'device_number', type: 'string'}, //only exist for devices
+			{name: 'alarm_state', type: 'string'},
 			{name: 'alarm_confirmed', type: 'string'},
 			{name: 'confirmed_by', type: 'string'},
 			{name: 'text', type: 'string'},

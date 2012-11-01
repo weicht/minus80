@@ -32,8 +32,8 @@ Ext.define("minus80.view.Facilities",{
 						refreshFn: function(plugin) {
 							var store = plugin.up().getStore();
 							store.load(function() {
-								//update Facilities badge with total number
-								Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
+//								//update Facilities badge with total number
+//								Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
 							});
 						}
 					}

@@ -18,37 +18,13 @@ Ext.define("minus80.controller.Facilities",{
    	launch: function(){
 		this.callParent();
 
-var fl = this.getFacilitiesList();
-//console.log('fl --');
-//console.log(fl);
+		var fl = this.getFacilitiesList();
 		//load the Facilities
 		Ext.getStore('facilitiesStore').load(function() {
-console.log('Facilities count: '+this.getTotalCount());
 			//if we have only one Facility, then auto expand it
 			if(this.getTotalCount() == 1){
-				Ext.Msg.alert("Auto Expand", "Auto Expanding Facility since there is only one");
-
-//facilitiesList.setActiveItem(1);
-
-    var node = this.getAt(0);
-console.log(node);
-//fl.gotToNode(node);
-//fl.goToLeaf(node);
-//fl.setActiveItem(0);
-fl.fireEvent('itemtap', fl, 0, null, this.getAt(0));
-/*
-        me.fireEvent('itemtap', this, list, index, target, record, e);
-        if (node.isLeaf()) {
-            me.fireEvent('leafitemtap', this, list, index, target, record, e);
-            me.goToLeaf(node);
-        }
-        else {
-            this.goToNode(node);
-*/
-
-
-		}
-
+				fl.fireEvent('itemtap', fl, 0, null, this.getAt(0));
+			}
 		});
 	},
         

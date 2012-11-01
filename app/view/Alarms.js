@@ -1,8 +1,9 @@
 Ext.define("minus80.view.Alarms",{
 	extend: 'Ext.navigation.View',
 	xtype: 'alarmspanel',
-	id: 'alarmspanel',
+//	id: 'alarmspanel',
 	requires: ['Ext.dataview.List', 'minus80.store.Alarms', 'Ext.plugin.PullRefresh'],
+//			   'Ext.Anim', 'Ext.Button'],
 	
 	config: {
 		title: 'Alarms',
@@ -25,14 +26,20 @@ Ext.define("minus80.view.Alarms",{
 
 				//formatting template for the list item
 //		    	itemTpl: '<div class="title">{text}</div><div class="metadata">{[values.items.length]} Units</div>',
-
 		    	itemTpl: new Ext.XTemplate(
 			    	'<div class="title">{text}</div>',
-					'<div class="metadata">Confirmed By: {confirmed_by}</div>',
-						'<tpl for="items">',
-							'<div class="metadata">{text}: {value}</div>',
-						'</tpl>'),
+//					'<div class="metadata">Confirmed By: {confirmed_by}</div>',
 
+			        '<tpl if="alarm_state &gt; 0 && alarm_confirmed != null && alarm_confirmed != 0">',
+						'<div class="metadata">Confirmed By: {confirmed_by}</div>',
+       				'</tpl>',
+
+//					'<div class="confirmplaceholder"></div>',
+						'<tpl for="items">',
+//							'<div class="metadata">{text}: {value}</div>',
+							'<div class="metadata">{formatted_value}</div>',
+						'</tpl>'),
+            
 				//Plugin for the pull down effect to refresh the list
 				plugins: [
 					{
@@ -41,7 +48,6 @@ Ext.define("minus80.view.Alarms",{
 						refreshFn: function(plugin) {
 							var store = plugin.up().getStore();
 							store.load(function() {
-							console.log('calling store.load() within refreshFn')
 								//update Alarms badge with total number
 								Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
 							});
@@ -54,32 +60,3 @@ Ext.define("minus80.view.Alarms",{
 });
 
 
-
-/* OLD...
-
-Ext.define("minus80.view.Alarms", {
-    extend: 'Ext.Panel',
-	xtype: 'alarmspanel',
-	id: 'alarmsForm',
-
-	//Alarm data is loaded within the Accounts Controller launch() fcn
-
-	config:{
-		title: 'Alarms',
-		iconCls: 'time',
-
-//need to add the style stuff to the application's .css or index.html file later
-		cls: 'alarms',
-		
-		//make the text look better on mobile sized devices
-		scrollable: true,
-		items: [
-			{
-				docked: 'top',
-				xtype: "toolbar",
-		        title: "Alarms"
-			},
-		]
-	}	    
-});
-*/

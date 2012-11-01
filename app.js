@@ -36,8 +36,6 @@ var Minus80App = Ext.application({
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('minus80.view.Main'));
-        
-console.log('leaving main launch event');
     },
 
     onUpdated: function() {
