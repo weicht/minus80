@@ -11,7 +11,9 @@
          */
         html, body {
             height: 100%;
-            background-color: #1985D0
+            //background-color: #565656;
+            //background-color: #4C6671;
+            background-color: rgb(63,181,232);
         }
 
         #appLoadingIndicator {
@@ -48,64 +50,7 @@
                 opacity: 0.8
             }
         }
-        
-        /* TODO: Move the styling to the proper location for a SASS build of the application */
-        .info {
-			text-align: center;
-            background-color: #1985D0
-        }
 
-		.metadata {
-/*	   	  font-size: 80%;*/
-/* 		  color: #999; */
-			font-size: 13px;
-		}
-
-		.title {
-			font-size: 15px;
-			font-weight:bold;
-		}
-
-		.infotitle {
-			font-size: 120%;
-			font-weight:bold;
-		}
-
-		.copy {
-			font-size: 80%;
-		}
-
-		.buildinfo {
-		  font-size: 80%;
-		  color: #999;
-		}
-
-		.list-item-title {
-		    float:left;
-		    width:100%
-		    font-size:90%;
-		    white-space: nowrap;
-		    overflow: hidden;
-		    text-overflow: ellipsis;
-		}
-
-		.list-item-narrative {
-		    float:left;
-		    width:100%;
-		    color:#666666;
-		    font-size:80%;
-		    white-space: nowrap;
-		    overflow: hidden;
-		    text-overflow: ellipsis;
-		}
-
-		.x-item-selected .list-item-title {
-		    color:#ffffff;
-		}
-
-		.x-item-selected .list-item-narrative {
-		    color:#ffffff;
-		}
     </style>
     <!-- The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src="sdk/microloader/development.js"></script>

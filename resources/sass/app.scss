@@ -1,19 +1,90 @@
-@import 'sencha-touch/default/all';
+/*
+  #C3C3C3 - gray
+  #565656 - dark gray almost black
+  #F7F7F7 - light gray
+  #4C6671 - rgb(63,181,232) - turquoise blue
+  rgb(63, 181, 232) - blue for hyperlinks
+ */
 
+//SASS variables
+$base-color: #565656;
+$page-bg-color: #F7F7F7;
+
+//make sure the list items get the same bg color as the other pages
+$list-bg-color: #F7F7F7;
+
+//Make the Settings page the correct bg color
+$form-bg-color: #F7F7F7;
+
+//make the top and bottom tabbars the dark/brown color like the portals footer
+$toolbar-base-color:#565656;
+
+//color behind active icons, or default buttons
+$active-color: #4C6671;
+
+//color for badge info
+$alert-color: red;
+
+//active color for list items that are selected
+$list-active-color: rgb(63,181,232); //#4C6671 should work, but doesnt
+
+//color for form buttons and confirmations
+$confirm-color: rgb(63,181,232);
+
+
+@import 'sencha-touch/default/all';
 // You may remove any of the following modules that you
 // do not use in order to create a smaller css file.
 @include sencha-panel;
 @include sencha-buttons;
-@include sencha-sheet;
-@include sencha-picker;
 @include sencha-tabs;
 @include sencha-toolbar;
 @include sencha-toolbar-forms;
-@include sencha-indexbar;
 @include sencha-list;
 @include sencha-layout;
-@include sencha-carousel;
 @include sencha-form;
 @include sencha-msgbox;
+//@include sencha-sheet;
+//@include sencha-picker;
+//@include sencha-indexbar;
+//@include sencha-carousel;
 
+//reqd for the Pull to refresh action
+@include sencha-list-pullrefresh;
+
+
+////////////////////////////////////////////
 // Your custom code goes here...
+.info {
+	text-align: center;
+}
+
+.alarmactive {
+	font-size: 15px;
+	font-weight:bold;
+    color: red;
+}
+
+.metadata {
+	font-size: 13px;
+}
+
+.title {
+	font-size: 15px;
+	font-weight:bold;
+}
+
+.infotitle {
+	font-size: 120%;
+	font-weight:bold;
+}
+
+.copy {
+	font-size: 80%;
+}
+
+.buildinfo {
+	font-size: 80%;
+	color: #999;
+}
+

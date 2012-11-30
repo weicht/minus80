@@ -3,15 +3,20 @@ Ext.define("minus80.view.UnitDetail",{
 	xtype: 'unitdetail',
 	
 	config:{
-//need to add the style stuff to the application's .css or index.html file later
-//		cls: 'info',
 		layout: 'fit',
 		style: 'text-align: left;',
 		scrollable: true,
 		styleHtmlContent: true,
 		tpl: new Ext.XTemplate(
 			'<tpl for="items">',
-				'<div class="title">{text}</div>',
+//				'<div class="{[xindex % 2 === 0 ? "list-item-even" : "list-item-odd"]}">',			
+//				'<div class="title">{text}</div>',
+		        '<tpl if="alarm_state &gt; 0">',
+					'<div class="alarmactive">{text}</div>',
+   				'<tpl else>',
+	   				'<div class="title">{text}</div>',
+				'</tpl>',
+				
 				//only show the confirmed by setting if the alarm is active and confirmed
 		        '<tpl if="alarm_state &gt; 0 && alarm_confirmed != null && alarm_confirmed != 0">',
 					'<div class="metadata">Confirmed By: {confirmed_by}</div>',

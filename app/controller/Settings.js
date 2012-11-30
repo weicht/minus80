@@ -2,8 +2,8 @@ Ext.define("minus80.controller.Settings",{
 	extend: 'Ext.app.Controller',
 
 	config: {
-		//if i turn this one, Settings gets loaded twice b/c it's declared in the app.js file too
-		// but if I turn it off in app.js, nothing loads
+		//WACKY: if i turn this one, Settings gets loaded twice b/c it's declared in the
+		// app.js file too but if I turn it off in app.js, nothing loads
 //		stores: ['Settings'],
 		refs: {
 			//these are defined with id's in the Settings view
@@ -11,7 +11,7 @@ Ext.define("minus80.controller.Settings",{
 			settingsForm: '#settingsForm'
 		},
 		control:{
-			//attach a callback method to the Save button bring tapped
+			//attach a callback method to the Save button
 			settingsSaveBtn: {
 				tap: 'save'
 			}
@@ -21,11 +21,21 @@ Ext.define("minus80.controller.Settings",{
 	launch: function(){
 		this.callParent();
 
+		var settings = Ext.getStore('settingsStore');
+
 		//preload the Settings info on launch
-		this.getSettingsForm().setRecord( Ext.getStore('settingsStore').getAt(0) );
+		this.getSettingsForm().setRecord( settings.getAt(0) );
+
+		//if we see "username" and "password" values, then this is a first launch
+		// - transition to the Settings tab and give them a prompt to change Settings
+		if( settings.getAt(0).data.username == 'username' &&
+			settings.getAt(0).data.password == 'password' ){
+			Ext.ComponentQuery.query('tabpanel')[0].setActiveItem(2);
+			Ext.Msg.alert("Settings", "Update your Settings so we may load your data.");
+		}
 	},
 
-	//save the user's settings to localstorage	
+	//save the user's settings to localstorage
 	save: function(){
 		//grab the username/password from the Settings form
 		var settingsValues = this.getSettingsForm().getValues();

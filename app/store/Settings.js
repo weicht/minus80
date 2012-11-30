@@ -19,13 +19,6 @@ Ext.define('minus80.store.Settings', {
 					store.add({username: 'username', password: 'password'});
 					store.sync();
 				}
-
-				//if it's still saying "username/password" then provide a popup window
-				// telling them to modify their Settings
-				if( this.getAt(0).data.username == 'username' &&
-					this.getAt(0).data.password == 'password' ){
-					Ext.Msg.alert("Settings", "Update your Settings so we may load your data.");
-				}
 			}
 		}
 	}

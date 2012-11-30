@@ -25,7 +25,7 @@ Ext.define("minus80.view.Info",{
 						<BR>Sales: <a href="mailto:sales@minus80monitoring.com">sales@minus80monitoring.com</a> \
 						<BR>Support: <a href="mailto:support@minus80monitoring.com">support@minus80monitoring.com</a> \
 						<BR>General: <a href="mailto:info@minus80monitoring.com">info@minus80monitoring.com</a> \
-				    	<BR><BR><div class="buildinfo">Build Date: 31 Oct 2012 3:45pm EST</div>'
+				    	<BR><BR><div class="buildinfo">Build Date: 29 Nov 2012 06:00pm EST</div>'
 						].join("")			
 			}
 		]

@@ -5,7 +5,6 @@ Ext.define("minus80.view.Main", {
     
     config: {
         tabBarPosition: 'bottom',
-
         items: [
 			{
 				xtype: 'facilitiespanel'

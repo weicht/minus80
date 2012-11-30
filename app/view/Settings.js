@@ -22,7 +22,7 @@ Ext.define("minus80.view.Settings", {
 			},
 			{
 			    xtype: 'fieldset',
-			    title: 'User Settings',
+			    title: 'Account Settings',
 			    instructions: 'Please enter the information above.',
 			    defaults: {
 					clearIcon: true,
