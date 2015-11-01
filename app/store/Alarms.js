@@ -23,6 +23,8 @@ Ext.define('minus80.store.Alarms', {
 			},
 			load: function(store, records, successful) {
 				console.log('Alarms loaded: '+records.length);
+				//update Alarms badge with total number
+				Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
 			}
 		}
 	}

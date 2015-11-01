@@ -1,60 +1,10 @@
-/*
-  #C3C3C3 - gray
-  #565656 - dark gray almost black
-  #F7F7F7 - light gray
-  #4C6671 - rgb(63,181,232) - turquoise blue
-  rgb(63, 181, 232) - blue for hyperlinks
- */
-
-//SASS variables
-$base-color: #565656;
-$page-bg-color: #F7F7F7;
-
-//make sure the list items get the same bg color as the other pages
-$list-bg-color: #F7F7F7;
-
-//Make the Settings page the correct bg color
-$form-bg-color: #F7F7F7;
-
-//make the top and bottom tabbars the dark/brown color like the portals footer
-$toolbar-base-color:#565656;
-
-//color behind active icons, or default buttons
-$active-color: #4C6671;
-
-//color for badge info
-$alert-color: red;
-
-//active color for list items that are selected
-$list-active-color: rgb(63,181,232); //#4C6671 should work, but doesnt
-
-//color for form buttons and confirmations
-$confirm-color: rgb(63,181,232);
-
-
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
-// You may remove any of the following modules that you
-// do not use in order to create a smaller css file.
-@include sencha-panel;
-@include sencha-buttons;
-@include sencha-tabs;
-@include sencha-toolbar;
-@include sencha-toolbar-forms;
-@include sencha-list;
-@include sencha-layout;
-@include sencha-form;
-@include sencha-msgbox;
-//@include sencha-sheet;
-//@include sencha-picker;
-//@include sencha-indexbar;
-//@include sencha-carousel;
 
-//reqd for the Pull to refresh action
-@include sencha-list-pullrefresh;
-
-
-////////////////////////////////////////////
-// Your custom code goes here...
+// Custom code goes here..
 .info {
 	text-align: center;
 }
@@ -88,3 +38,6 @@ $confirm-color: rgb(63,181,232);
 	color: #999;
 }
 
+
+// Examples of using the icon mixin:
+// @include icon('user');

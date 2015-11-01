@@ -10,7 +10,7 @@ Ext.define("minus80.view.Main", {
 				xtype: 'facilitiespanel'
 			},
 			{
-				xtype: 'alarmspanel',
+				xtype: 'alarmspanel'
 			},
 			{
 				xtype: 'settingspanel'
@@ -19,5 +19,5 @@ Ext.define("minus80.view.Main", {
 				xtype: 'infopanel'
 			}
         ]
-    },
+    }
 });

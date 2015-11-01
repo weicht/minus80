@@ -7,7 +7,7 @@ Ext.define("minus80.controller.Alarms",{
 		// but if I turn it off in app.js, nothing loads
 		stores: ['Alarms'],
 		refs: {
-			alarmsList: '#alarms-list', //id from the view requires a # prefix
+			alarmsList: '#alarms-list' //id from the view requires a # prefix
 		},
 		control:{
 //			alarmsList: {
@@ -24,7 +24,7 @@ Ext.define("minus80.controller.Alarms",{
 			//update Alarms badge with total number
 			Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
 		});
-	},
+	}
 });
 
 

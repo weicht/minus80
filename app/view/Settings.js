@@ -40,13 +40,13 @@ Ext.define("minus80.view.Settings", {
 			        name : 'password',
 			        label: 'Password',
 			        labelWidth: 100
-			    }],
+			    }]
 			},
 			{
 			    xtype: 'button',
 				id: 'settings-save-btn',
 	            text: 'Save',
-	            ui: 'confirm',
+	            ui: 'confirm'
 			}
 		]
 	}	    

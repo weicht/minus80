@@ -31,8 +31,7 @@ Ext.define("minus80.controller.Settings",{
 		if( settings.getAt(0).data.username == 'username' &&
 			settings.getAt(0).data.password == 'password' ){
 			Ext.ComponentQuery.query('tabpanel')[0].setActiveItem(2);
-//			Ext.Msg.alert("Settings", "Update your Settings so we may load your data.");
-			alert("Update your Settings so we may load your data.");
+			Ext.Msg.alert("Settings", "Update your Settings so we may load your data.");
 		}
 	},
 
@@ -49,15 +48,12 @@ Ext.define("minus80.controller.Settings",{
 			method: 'GET',
 			success: function (result, request) {
 				var text = result.responseText;
-//				console.log('result.responseText: '+result.responseText);
 
 		        // process server response here
 				var response = Ext.decode(result.responseText);
-//console.log('response.success: '+response.success);
 				if( response.success == true ){
 					//update the settings in storage
 					var store = Ext.getStore('settingsStore');
-//console.log('Current user creds - name: '+store.getAt(0).data.username+' :: pass: '+store.getAt(0).data.password);
 			
 					//delete existing settings
 					if(store.data.length > 0){
@@ -81,24 +77,18 @@ Ext.define("minus80.controller.Settings",{
 					store.sync();
 
 					//Reload the app to refresh everything.  Probably a cleaner way to do it, but this works for now
-					// Ext.Msg.confirm("Settings", "Credentials validated. Reload data?", function(e){
-					// 	if(e == 'yes'){
-					// 		//fire the Main app logic to store the global settings and refresh the app
-					// 		minus80.app.fireEvent('loginSuccess', settingsValues);
-					// 	}
-					// });
-					if( confirm("Credentials validated. Reload data?") ){
-						//fire the Main app logic to store the global settings and refresh the app
-						minus80.app.fireEvent('loginSuccess', settingsValues);
-					};
+					Ext.Msg.confirm("Settings", "Credentials validated. Reload data?", function(e){
+						if(e == 'yes'){
+							//fire the Main app logic to store the global settings and refresh the app
+							minus80.app.fireEvent('loginSuccess', settingsValues);
+						}
+					});
 				} else {
-//					Ext.Msg.alert("Settings", "User credentials failed to validate");
-					alert("User credentials failed to validate");
+					Ext.Msg.alert("Settings", "User credentials failed to validate");
 				}
 			},
 			failure: function (result, request) {
-//				Ext.Msg.alert("ERROR", "Failed to validate with the server");
-				alert("Failed to validate with the server");
+				Ext.Msg.alert("ERROR", "Failed to validate with the server");
 			}
 		});
 	}

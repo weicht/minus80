@@ -44,16 +44,27 @@ Ext.define("minus80.view.Alarms",{
 				plugins: [
 					{
 						xclass: 'Ext.plugin.PullRefresh',
-						pullRefreshText: 'Pull down to refresh...',
-						refreshFn: function(plugin) {
-							var store = plugin.up().getStore();
-							store.load(function() {
+						pullText: 'Pull down to refresh...',
+						listeners : {
+							latestfetched : function(store) {
+								var store = this.getList().getStore();
+								// store.currentPage = 1;
+						  //       store.load(function() {
+								// 	//update Alarms badge with total number
+								// 	Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
+								// });
+
 								//update Alarms badge with total number
-								Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
-							});
+								Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(store.getTotalCount());
+
+								//hack to get the Pull to Refresh splash text to go away as it seems to stick at times
+								this.getTranslatable().translate(0,0); //hides the PullToRefresh msg
+								this.getList().getScrollable().getScroller().scrollToTop(); //makes sure we scroll to top
+								this.setState('release'); //gets the plugin back in the proper state
+							}
 						}
 					}
-				],
+				]
 			}
 		]
 	}

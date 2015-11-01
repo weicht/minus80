@@ -25,7 +25,7 @@ Ext.define("minus80.view.UnitDetail",{
 					'<div class="metadata">{formatted_value}</div>',
 				'</tpl>',
 				'<HR>',
-			'</tpl>'),
+			'</tpl>')
 	}
 });
 
