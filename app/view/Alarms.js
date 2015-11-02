@@ -22,8 +22,6 @@ Ext.define("minus80.view.Alarms",{
 		    	store: 'alarmsStore',
 				id: 'alarms-list',
 			
-				//indexBar: true,
-
 				//formatting template for the list item
 //		    	itemTpl: '<div class="title">{text}</div><div class="metadata">{[values.items.length]} Units</div>',
 		    	itemTpl: new Ext.XTemplate(
@@ -47,20 +45,19 @@ Ext.define("minus80.view.Alarms",{
 						pullText: 'Pull down to refresh...',
 						listeners : {
 							latestfetched : function(store) {
-								var store = this.getList().getStore();
-								// store.currentPage = 1;
-						  //       store.load(function() {
-								// 	//update Alarms badge with total number
-								// 	Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getTotalCount());
-								// });
+								//data has been fetched so let's resync the list view
+								// This actually makes the api call twice but is quick to implement for now
+								// - o/w, data is fetched but never loaded
+								this.getList().getStore().currentPage = 1;
+								this.getList().getStore().load();
 
 								//update Alarms badge with total number
-								Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(store.getTotalCount());
+								Ext.getCmp('mainTab').getTabBar().getComponent(1).setBadgeText(this.getList().getStore().getTotalCount());
 
 								//hack to get the Pull to Refresh splash text to go away as it seems to stick at times
 								this.getTranslatable().translate(0,0); //hides the PullToRefresh msg
 								this.getList().getScrollable().getScroller().scrollToTop(); //makes sure we scroll to top
-								this.setState('release'); //gets the plugin back in the proper state
+								this.setState('release'); //gets the plugin back in the proper state - true HACK
 							}
 						}
 					}
